@@ -1,0 +1,10 @@
+# Deploy hash
+shopify/assets/deploy_sha.txt
+
+# Config
+shopify/config/settings_data.json
+config.yml
+
+# Editors
+.idea
+.vscode
