@@ -1,0 +1,22 @@
+name: deploy staging theme
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    name: deploy staging theme
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: discolabs/deploy-shopify-theme-action@v1
+        with:
+          store: ${{ secrets.SHOPIFY_STAGING_STORE }}
+          password: ${{ secrets.SHOPIFY_STAGING_PASSWORD }}
+          theme_id: ${{ secrets.SHOPIFY_STAGING_THEME_ID }}
+          path: shopify
+          additional_args: --ignored-file=config/settings_data.json
