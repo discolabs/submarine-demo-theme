@@ -1,0 +1,7 @@
+# Config
+config/settings_data.json
+config.yml
+
+# Editors
+.idea
+.vscode
