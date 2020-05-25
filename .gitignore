@@ -1,5 +1,8 @@
+# Deploy hash
+shopify/assets/deploy_sha.txt
+
 # Config
-config/settings_data.json
+shopify/config/settings_data.json
 config.yml
 
 # Editors
