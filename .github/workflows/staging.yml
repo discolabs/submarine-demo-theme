@@ -19,6 +19,6 @@ jobs:
           password: ${{ secrets.SHOPIFY_STAGING_PASSWORD }}
           theme_id: ${{ secrets.SHOPIFY_STAGING_THEME_ID }}
           path: shopify
-          build_command: echo "building!"
-          build_pathspec: shopify/**/*.{py,js}
+          build_command: cp source/**/*.{py,js} shopify/assets
+          build_pathspec: source/**/*.{py,js}
           additional_args: --ignored-file=config/settings_data.json
