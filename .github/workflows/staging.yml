@@ -13,10 +13,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: discolabs/deploy-shopify-theme-action@v1
+      - uses: discolabs/deploy-shopify-theme-action@develop
         with:
           store: ${{ secrets.SHOPIFY_STAGING_STORE }}
           password: ${{ secrets.SHOPIFY_STAGING_PASSWORD }}
           theme_id: ${{ secrets.SHOPIFY_STAGING_THEME_ID }}
           path: shopify
+          build_command: echo "building!"
+          build_pathspec: shopify/**/*.{py,js}
           additional_args: --ignored-file=config/settings_data.json
